@@ -35,7 +35,7 @@ Python3 main.py <arg1> <arg2> <arg3> <arg4>
 * Then we convert arg2, the lookup table fine, into a hashmap where the key, combination of destination port & protocol key, map to a tag. Let’s call this map2
 * Then we read through the log file. For every log, we extract the destination port & protocol number. 
 * From the protocol number, we get the log’s protocol key using map1
-      * If the protocol number does not have an associated key, we mark the protocol as “unassigned”
+    *  If the protocol number does not have an associated key, we mark the protocol as “unassigned”
 * Now, since we have both destination port & protocol key, we use that to get the corresponding tag using map2
     * If it does not have a corresponding tag from the lookup table fine, we label this as “untagged”
 * As we look through the logs, we keep track of all the tags we have seen and how many of each. We store this in a map data structure, let’s call it map3
