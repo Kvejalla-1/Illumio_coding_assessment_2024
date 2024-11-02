@@ -14,6 +14,9 @@ This solution is in Python 3
     * This should be a CSV file. The spec sent to me in the email has a contradiction -- in the beginning it says this file is a csv file and later it says it’s a plain text file. Given this contradiction, I decided to let this file be a CSV file because it made more sense to me
     * This should always contain a header with the column names. Otherwise, the output may be slightly incorrect.
     * This file should never be empty, at the very least it should contain the header (the column names)
+    * The 1st column should always be the destination port and should always be an integer
+    * The 2nd column should always be the protocol name as a string
+    * The 3rd column should always be the tag, also as a string
 * We are using the Protocal decimal to protocol key mapping as shown over here → https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml. If we ever encounter a Protocol decimal value not in the mapping in the link, we mark it as “unassigned”
 * There is no limitation on what version the log has to be -- it can be any form of log where the destination port needs to be an integer in the 6th position and the protocol needs to be in the 7th position (using 0th indexing). This assumption is based on this → https://docs.aws.amazon.com/vpc/latest/userguide/flow-log-records.html#flow-logs-fields 
 * The tags & protocol names in this program are not case-sensitive
